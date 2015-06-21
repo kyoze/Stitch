@@ -3,7 +3,6 @@ package stitch;
 import java.io.IOException;
 import java.io.LineNumberReader;
 import java.io.Reader;
-import java.text.ParseException;
 import java.util.ArrayList;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -70,14 +69,15 @@ public class Lexer {
             //设置边界
             matcher.region(pos,endPos);
 
+            //如果匹配到一个token,把该token划入list,接着查找下一个
             if(matcher.lookingAt()){
                 addToken(lineNo,matcher);
                 pos=matcher.end();
             }else{
                 throw new ParseException("bad token at line"+lineNo);
             }
-            queue.add(new IdToken(lineNo,Token.EOL));
         }
+        queue.add(new IdToken(lineNo,Token.EOL));
     }
     protected void addToken(int lineNo,Matcher matcher){
         //Matcher的group(0)指的是匹配整个模式,group(n)指的是匹配左起第n个括号里的模式
@@ -89,17 +89,21 @@ public class Lexer {
                 Token token;
                 //如果是数字
                 if (matcher.group(3) != null) {
+                    //System.out.println(matcher.group(3)+"---is number");
                     token=new NumToken(lineNo,Integer.parseInt(m));
                 }
                 //如果是字符串
                 else if (matcher.group(4)!=null) {
+                    //System.out.println(matcher.group(4)+"---is string");
                     token=new StrToken(lineNo,toStringLiteral(m));
                 }
                 //如果是保留字
                 else{
+                    //System.out.println(m+"---is id");
                     token=new IdToken(lineNo,m);
                 }
                 queue.add(token);
+                //System.out.println("add----"+queue.size());
             }
         }
     }
@@ -118,8 +122,39 @@ public class Lexer {
                     c='\n';
                 }
             }
-            return sb.toString();
+            sb.append(c);
         }
+        return sb.toString();
     }
 
+    protected static class NumToken extends Token{
+        private int value;
+        protected NumToken(int line,int v){
+            super(line);
+            value=v;
+        }
+        public boolean isNumber(){return true;}
+        public String getText(){return Integer.toString(value);}
+        public int getNumber(){return value;}
+    }
+
+    protected static class IdToken extends Token{
+        private String text;
+        protected IdToken(int line,String id){
+            super(line);
+            text=id;
+        }
+        public boolean isIdentifier(){return true;}
+        public String getText(){return text;}
+    }
+
+    protected static class StrToken extends Token{
+        private String literal;
+        StrToken(int line,String str){
+            super(line);
+            literal=str;
+        }
+        public boolean isString(){return true;}
+        public String getText(){return literal;}
+    }
 }
