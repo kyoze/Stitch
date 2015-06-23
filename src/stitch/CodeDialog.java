@@ -8,7 +8,7 @@ import java.io.*;
  * User: kaya
  * Date: 6/22/15
  * Time: 1:45 AM
- * To change this template use File | Settings | File Templates.
+ * 输入程序的窗口
  */
 public class CodeDialog extends Reader{
     private String buffer=null;

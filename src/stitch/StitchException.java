@@ -7,7 +7,7 @@ import stitch.ast.ASTree;
  * User: kaya
  * Date: 6/19/15
  * Time: 11:07 PM
- * To change this template use File | Settings | File Templates.
+ * 自定义的异常类
  */
 public class StitchException extends RuntimeException {
     public StitchException(String m){

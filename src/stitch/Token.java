@@ -5,7 +5,7 @@ package stitch;
  * User: kaya
  * Date: 6/17/15
  * Time: 6:33 AM
- * To change this template use File | Settings | File Templates.
+ * 把分割后的数字,字符串,标识符统称为token
  */
 public abstract class Token {
     public static final Token EOF=new Token(-1){};

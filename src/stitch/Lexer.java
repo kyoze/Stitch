@@ -12,7 +12,7 @@ import java.util.regex.Pattern;
  * User: kaya
  * Date: 6/20/15
  * Time: 1:13 AM
- * To change this template use File | Settings | File Templates.
+ * 分割单词
  */
 public class Lexer {
     public static String regexPat="\\s*((//.*)|([0-9]+)|(\"(\\\\\"|\\\\\\\\|\\\\n|[^\"])*\")" +

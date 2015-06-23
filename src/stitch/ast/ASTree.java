@@ -7,7 +7,7 @@ import java.util.Iterator;
  * User: kaya
  * Date: 6/20/15
  * Time: 4:58 AM
- * To change this template use File | Settings | File Templates.
+ * 语法树的抽象类,是叶子节点和含有树枝节点的父类
  */
 public abstract class ASTree implements Iterable<ASTree> {
     public abstract ASTree child(int i);

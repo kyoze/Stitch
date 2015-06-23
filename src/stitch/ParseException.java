@@ -7,7 +7,7 @@ import java.io.IOException;
  * User: kaya
  * Date: 6/22/15
  * Time: 12:31 AM
- * To change this template use File | Settings | File Templates.
+ * 解析错误的异常类
  */
 public class ParseException extends Exception {
     public ParseException(Token t){
