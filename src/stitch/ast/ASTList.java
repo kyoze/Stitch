@@ -10,12 +10,12 @@ import java.util.List;
  * Time: 7:33 PM
  * 含有树枝的节点的父类
  */
-public class ASList extends ASTree{
+public class ASTList extends ASTree{
     protected List<ASTree> children;
     public ASTree child(int i){
         return children.get(i);
     }
-    public ASList(List<ASTree> list){
+    public ASTList(List<ASTree> list){
         children=list;
     }
     public int numChildren(){

@@ -12,10 +12,10 @@ import java.util.Iterator;
  * Time: 7:09 PM
  * 语法树的叶子节点的父类
  */
-public class ASLeaf extends ASTree {
+public class ASTLeaf extends ASTree {
     private static ArrayList<ASTree> empty=new ArrayList<ASTree>();
     protected Token token;
-    public ASLeaf(Token t){
+    public ASTLeaf(Token t){
         token=t;
     }
     public ASTree child(int i){

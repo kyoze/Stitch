@@ -9,7 +9,7 @@ import java.util.List;
  * Time: 11:20 PM
  * 存放语法树运算符的节点
  */
-public class BinaryExpr extends ASList {
+public class BinaryExpr extends ASTList {
     public BinaryExpr(List<ASTree> c){
         super(c);
     }
@@ -17,7 +17,7 @@ public class BinaryExpr extends ASList {
         return child(0);
     }
     public String operator(){
-        return ((ASLeaf)child(1)).token().getText();
+        return ((ASTLeaf)child(1)).token().getText();
     }
     public ASTree right(){
         return child(2);

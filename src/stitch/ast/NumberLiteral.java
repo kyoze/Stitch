@@ -9,7 +9,7 @@ import stitch.Token;
  * Time: 9:00 PM
  * 存放语法树数字字面值的节点
  */
-public class NumberLiteral extends ASLeaf{
+public class NumberLiteral extends ASTLeaf {
     public NumberLiteral(Token t){
         super(t);
     }

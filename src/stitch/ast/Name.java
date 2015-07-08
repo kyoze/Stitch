@@ -9,7 +9,7 @@ import stitch.Token;
  * Time: 11:12 PM
  * 存放语法树变量的节点
  */
-public class Name extends ASLeaf{
+public class Name extends ASTLeaf {
     public Name(Token t){
         super(t);
     }
