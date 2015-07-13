@@ -1,4 +1,4 @@
-package test;
+package runner;
 
 import stitch.*;
 import stitch.ast.ASTree;
