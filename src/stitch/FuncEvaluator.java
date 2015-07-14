@@ -44,7 +44,9 @@ import java.util.List;
         public Postfix postfix(int nest) {
             return (Postfix)child(numChildren()-nest-1);
         }
-
+        public Object eval(Environment env) {
+            return evalSubExpr(env,0);
+        }
         public Object evalSubExpr(Environment env, int nest) {
             if (hasPostfix(nest)) {
                 Object target=evalSubExpr(env, nest+1);
