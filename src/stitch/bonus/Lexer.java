@@ -1,4 +1,4 @@
-package bonus;
+package stitch.bonus;
 
 import stitch.CodeDialog;
 

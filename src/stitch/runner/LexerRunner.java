@@ -1,4 +1,4 @@
-package runner;
+package stitch.runner;
 
 import stitch.CodeDialog;
 import stitch.Lexer;

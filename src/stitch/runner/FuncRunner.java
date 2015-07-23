@@ -1,4 +1,4 @@
-package runner;
+package stitch.runner;
 
 import javassist.gluonj.util.Loader;
 import stitch.FuncEvaluator;
